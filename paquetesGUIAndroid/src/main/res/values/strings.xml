@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MainActivity</string>
+    <string name="alert_dialog_ok">OK</string>    
+    <string name="buscar">Buscar</string>    
+    <string name="crearOtro">Crear otra</string>    
+    <string name="Guardarynuevo">Guardar y nuevo</string>    
+    <string name="Salir">Salir</string>    
+    <string name="guardado">Registro guardado correctamente</string>    
+    
+</resources>

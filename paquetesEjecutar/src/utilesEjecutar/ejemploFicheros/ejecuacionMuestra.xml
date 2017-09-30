@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+
+<root>
+    <!--Parametros, q luego se pueden usar, por ejemplo, %rutaBase%-->
+    <parametros>
+        <rutaBase>/home/eduardo/d/programas</rutaBase>
+        <direccionInternet>http://127.0.0.1:8080/paquetesEjecutarServer/</direccionInternet>
+    </parametros>
+    <!--
+
+        Parametros del System.properties, q luego se pueden usar, por ejemplo, %user.home%
+
+    -->
+
+    <!--
+        tmp="tmp" -> usa el direc. tmp para archivos temporales y copia seguridad
+        copiaseguridad="1" -> Si se hace copia seguridad
+        logo="imagen.jpg" -> Logo del cargador imagen.jpg
+        salirAlfinalizar="1" -> Al terminar el cargador se sale del cargador
+            -al hacer esto la salida del otro programa se pierde
+        fechaEnFichero=
+            "1" -> indica q se descargaran archivos en funcion de la ultima descarga
+                ,es decir, cada vez q se descarga algo se guarda la fecha en el fichero
+            "0"-> indica q se usaran el tamaño y la fecha de los archivos fuentes que hay en el servidor
+    -->
+    <configuracion tmp="tmp" copiaseguridad="1" logo="imagen.jpg"  salirAlfinalizar="1" fechaEnFichero="1" log="ejecucion"/>
+    <fuentes>
+        <!--Fuente de archivos http http://127.0.0.1:8080/paquetesEjecutarServer/, lee los archivos a descargar de http://127.0.0.1:8080/paquetesEjecutarServer/ficherosMuestra.xml -->
+        <http nombre="fuente1" codebase="http://127.0.0.1:8080/paquetesEjecutarServer/" listaFicheros="ficherosMuestra.xml"/>
+        <!--Fuente de archivos http http://127.0.0.1:8080/paquetesEjecutarServer/, lee los archivos a descargar de http://127.0.0.1:8080/paquetesEjecutarServer/ficherosMuestra.jnlp , formato jnlp-->
+        <http nombre="fuente1.1" codebase="%direccionInternet%" listaFicheros="ficherosMuestra.jnlp"/>
+        <!--Fuente de archivos ftp ftp://creativa3d.com/hp, coge toda la estruc. de directorios-->
+        <ftp nombre="fuente2" codebase="creativa3d.com" directorio="hp" usuario="otros" password="otros"/>
+        <!--Fuente de archivos disco duro local /home/eduardo/d/programas/java/_NetBeansProyect/paquetes/paquetesEjecutar/pruebas/fuente, coge toda la estruc. de directorios-->
+        <carpeta nombre="fuente3" codebase="/home/eduardo/d/programas/java/_NetBeansProyect/paquetes/paquetesEjecutar/pruebas/fuente"/>
+        <!--Fuente de archivos individuales, tipo http-->
+        <archivos nombre="fuente4" tipo="http" codebase="http://127.0.0.1:8080/paquetesEjecutarServer/">
+            <!--Archivo aplicacion.jar, en el direc. raiz de http://127.0.0.1:8080/paquetesEjecutarServer/ -->
+            <archivo href="aplicacion.jar" />
+            <!--Archivo paquetes.jar, en el subdirec. lib de http://127.0.0.1:8080/paquetesEjecutarServer/ -->
+            <archivo href="lib/paquetes.jar" />
+            <!--Idem anterior, compatibilidad con archivos jnlp/ -->
+            <jar href="lib/paquetes.jar"/>
+        </archivos>
+    </fuentes>
+    <ejecuciones>
+        <!--control flujo, si NO existe el directorio %rutaBase%(/home/eduardo/d/programas), ejecuta la instruccion laprueba -->
+        <condicion enable="1" tipo="sinoexistedir" dir="%rutaBase%" ejecutar="laprueba"/>
+        <!--control flujo, si SI existe el directorio %rutaBase%(/home/eduardo/d/programas), ejecuta la instruccion laprueba -->
+        <condicion enable="1" tipo="siexistedir" dir="%rutaBase%" ejecutar="laprueba"/>
+        <!--Copia todos los ficheros de todas las fuentes en la carpeta /home/eduardo/d/programas/java/_NetBeansProyect/paquetes/paquetesEjecutar/pruebas/destino con la estructuta de directorios
+            ESTA DESABILITADA, solo se ejecuta si la condicion anterior es valida-->
+        <destino enable="0" nombre="laprueba" fuentes="todas" codebase="/home/eduardo/d/programas/java/_NetBeansProyect/paquetes/paquetesEjecutar/pruebas/destino" estructura="arbol"/>
+        <!--Borra todos los archivos-->
+        <borrar codebase="/home/eduardo/d/programas/java/_NetBeansProyect/paquetes/paquetesEjecutar/pruebas/destinoPlano" recursivo="0"/>
+        <!--Copia todos los ficheros de la fuente3 en la carpeta /home/eduardo/d/programas/java/_NetBeansProyect/paquetes/paquetesEjecutar/pruebas/destinoPlano sin estructuta de directorios-->
+        <destino fuentes="fuente3" codebase="/home/eduardo/d/programas/java/_NetBeansProyect/paquetes/paquetesEjecutar/pruebas/destinoPlano" estructura="plana"/>
+        <!--Copia todos los ficheros de la fuente3 en la carpeta /home/eduardo/d/programas/java/_NetBeansProyect/paquetes/paquetesEjecutar/pruebas/destinoPlano sin estructuta de directorios y siempre copia cada archivo aunque sean iguales-->
+        <destino fuentes="fuente3" codebase="/home/eduardo/d/programas/java/_NetBeansProyect/paquetes/paquetesEjecutar/pruebas/destinoPlano" forzar="1" estructura="plana"/>
+
+        <!--Al terminar de copiar lanza el programa.sh y espera a q termine-->
+        <ejecutar programa="programa.sh" parametro="param1" parametro="param2"  RutaBase="/home/d/programas/java/_NetBeansProyect/paquetes/paquetesEjecutar/pruebas/destino" EsperarATerminar="1"/>
+        <!--Al terminar lo anterior ejecuta sin bloquear-->
+        <ejecutar programa="java" parametro="-jar" parametro="C:/DISCOD/Desarrollo/java/_NetBeansProyect/paquetesEjecutar/destino/destino1/exprop.jar"/>
+        <!--
+        despues de todo lo anterior ejecuta el programa java ejemplo.main sin esperar q termine y con su propia maq. virtual
+            coge todos los jar q hay dentro de la ruta base(incluye subdirectorios)
+        -->
+        <ejecutarJava main="ejemplo.main" RutaBase="/home/d/programas/java/_NetBeansProyect/paquetes/paquetesEjecutar/pruebas/destino" parametro="param1" parametro="param2" EsperarATerminar="0" JVMCompartida="0"/>
+        <!--
+        despues de todo lo anterior ejecuta el programa java ejemplo.main
+            sin sin esperar a q termine
+            metiendolo en una maq. virtual compartida
+            ,esto es, todos los programas q se ejecuten con esta accion
+            se ejecutaran en una sola jvm, ahorrando recursos
+        -->
+        <ejecutarJava main="ejemplo.main" RutaBase="/home/d/programas/java/_NetBeansProyect/paquetes/paquetesEjecutar/pruebas/destino" parametro="param1" parametro="param2" EsperarATerminar="0" JVMCompartida="1"/>
+        
+        <!-- agrupaciones de ejecuiones-->
+        <condicion enable="1" tipo="sinoexistedir" dir="%rutaBase%" ejecutar="agrupacion"/>
+        <Agrupar nombre="agrupacion">
+            <destino fuentes="fuente3" codebase="/home/eduardo/d/programas/java/_NetBeansProyect/paquetes/paquetesEjecutar/pruebas/destinoPlano" forzar="1" estructura="plana"/>
+            <!--Al terminar de copiar lanza el programa.sh y espera a q termine-->
+            <ejecutar programa="programa.sh" parametro="param1" parametro="param2"  RutaBase="/home/d/programas/java/_NetBeansProyect/paquetes/paquetesEjecutar/pruebas/destino" EsperarATerminar="1"/>
+        </Agrupar>
+        <link nombre="nombre" comando="ejecutar.bat" dirTrabajo="/home/eduardo/listDatos/itvReformas" pathLink="/home/eduardo/Desktop" nombreLink="itvReformas" iconoLink="/home/eduardo/listDatos/itvReformas/icon.ico"></link>
+        
+    </ejecuciones>
+</root>

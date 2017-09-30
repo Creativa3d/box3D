@@ -1,0 +1,10 @@
+<informe codigo="1" name="ivmt" ancho="21" alto="29.7" orientacion="vertical" margenSuperior="2" margenInferior="2" margenDerecho="2" margenIzquierdo="2" >
+	<fuente name="fuente1" fuente="Arial" size="8.25" underline="no" bold="si" cursiva="no" tachado="no"/>
+	<banda name="banda1" ancho="21" alto="29.7" extensible="1" x="0" y = "0">
+		<cuadrado name="cuadrado1" estilo="solido" x1="0.5" y1="18" x2="18" y2="21" ancho="1" color="248:252:0"/>
+		<imagen name="imagen1" camino="/home/d/programas/java/_NetBeansProyect/paquetes/paquetesGUIx/1.jpg" x="1" y="1" ancho="10" alto="10" ajustar="si"/>
+		<linea  name="linea1" estilo="solido" x1="0.5" y1="18" x2="18" y2="21" ancho="1" color="248:252:0" />
+		<texto name="texto1" x="0.5" y="18" ancho="10" alto="0.4" alineacion="left" texto="texto libre" multilinea="no" color="248:252:0" fuente="fuente1" />
+		
+	</banda>
+</informe>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root id="BorderPane" prefHeight="329.0" prefWidth="510.0" type="javafx.scene.layout.BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <ScrollPane hbarPolicy="NEVER" BorderPane.alignment="CENTER">
+         <content>
+            <VBox fx:id="jPanelProcesos" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="505.0" />
+         </content>
+      </ScrollPane>
+   </center>
+   <bottom>
+      <BorderPane prefHeight="24.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <Button fx:id="btnSalir" mnemonicParsing="false" text="Ocultar" BorderPane.alignment="CENTER">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Stop16bis.gif" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </center>
+      </BorderPane>
+   </bottom>
+</fx:root>

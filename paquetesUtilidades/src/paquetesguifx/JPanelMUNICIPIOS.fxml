@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import utilesFX.panelesGenericos.*?>
+<?import utilesFX.formsGenericos.*?>
+<?import org.controlsfx.control.textfield.CustomTextField?>
+
+<?scenebuilder-classpath-element ../../../../_NetBeansProyect/paquetes/paquetes/dist/paquetes.jar?>
+<?scenebuilder-classpath-element ../../../../_NetBeansProyect/paquetes/paquetesGUIFX/dist/paquetesGUIFX.jar?>
+<fx:root type="javafx.scene.layout.GridPane" id="AnchorPane" hgap="4.0" prefHeight="400.0" prefWidth="600.0" vgap="4.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">  <children>
+    <Label fx:id="lblCODPROV" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="CODPROV" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <CustomTextField fx:id="txtCODPROV" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+    <Label fx:id="lblCODHACIENDA" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="CODHACIENDA" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <CustomTextField fx:id="txtCODHACIENDA" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <Label fx:id="lblMUNICIPIO" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="MUNICIPIO" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <CustomTextField fx:id="txtMUNICIPIO" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <Label fx:id="lblCPM" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="CPM" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+    <CustomTextField fx:id="txtCPM" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <Label fx:id="lblESCAPITALSN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="ESCAPITALSN" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+    <CustomTextField fx:id="txtESCAPITALSN" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    <Label fx:id="lblFECHAACT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="FECHAACT" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+    <CustomTextField fx:id="txtFECHAACT" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+    <Label fx:id="lblCODIGOINE" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="CODIGOINE" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+    <CustomTextField fx:id="txtCODIGOINE" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+  </children>
+  <columnConstraints>
+    <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" vgrow="ALWAYS" />
+  </rowConstraints>
+</fx:root>

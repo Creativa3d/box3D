@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<parameter name="leyenda" class="java.lang.String"/>
+	<parameter name="grafico" class="java.awt.Image"/>
+	<parameter name="logo" class="java.awt.Image"/>
+	<parameter name="logotexto" class="java.lang.String"/>
+	<parameter name="entidad" class="java.lang.String"/>
+	<parameter name="titulo" class="java.lang.String"/>
+	<field name="titulo" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band/>
+	</title>
+	<columnHeader>
+		<band/>
+	</columnHeader>
+	<detail>
+		<band height="555">
+			<textField>
+				<reportElement x="87" y="3" width="547" height="21"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{entidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="87" y="24" width="547" height="34"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{logotexto}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="16" y="71" width="776" height="394"/>
+				<imageExpression class="java.awt.Image"><![CDATA[$P{grafico}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="15" y="0" width="71" height="58"/>
+				<imageExpression class="java.awt.Image"><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="16" y="477" width="776" height="58"/>
+				<textElement markup="html"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{leyenda}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band/>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

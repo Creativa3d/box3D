@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import utilesFX.*?>
+<?scenebuilder-classpath-element ../../../../_NetBeansProyect/paquetes/paquetes/dist/paquetes.jar?>
+<?scenebuilder-classpath-element ../../../../_NetBeansProyect/paquetes/paquetesGUIFX/dist/paquetesGUIFX.jar?>
+
+<fx:root id="AnchorPane" minWidth="476.0" prefHeight="400.0" prefWidth="527.0" type="javafx.scene.layout.BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <bottom>
+    <HBox prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label prefWidth="114.0" text="Columna defecto" />
+        <ComboBox fx:id="cmbColumnaDefecto" maxWidth="1.7976931348623157E308" minHeight="-1.0" minWidth="-1.0" HBox.hgrow="ALWAYS">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+      </children>
+      <padding>
+        <Insets bottom="4.0" />
+      </padding>
+    </HBox>
+  </bottom>
+  <center>
+    <JTableViewCZ fx:id="jTableConfig" prefHeight="200.0" prefWidth="200.0">
+      <columns>
+        <TableColumn prefWidth="75.0" text="Column X" />
+        <TableColumn prefWidth="75.0" text="Column X" />
+      </columns>
+    </JTableViewCZ>
+  </center>
+  <top>
+    <HBox prefHeight="-1.0" prefWidth="-1.0">
+      <children>
+        <Label prefWidth="114.0" text="Config.Columnas" />
+        <ComboBox fx:id="cmbConfig" maxWidth="1.7976931348623157E308" minHeight="-1.0" minWidth="-1.0" HBox.hgrow="ALWAYS">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <Button fx:id="btnNuevo" mnemonicParsing="false" text="Nuevo">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Add16.gif" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+        <Button fx:id="btnBorrar" mnemonicParsing="false" text="Borrar">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Delete16.gif" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+        <Button fx:id="btnSalir" mnemonicParsing="false" text="Salir">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Stop16bis.gif" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+      </children>
+      <padding>
+        <Insets bottom="4.0" />
+      </padding>
+    </HBox>
+  </top>
+</fx:root>

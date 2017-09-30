@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root id="AnchorPane" type="javafx.scene.layout.GridPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+    <Label fx:id="lblBD" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Base de Datos" GridPane.columnIndex="0" GridPane.rowIndex="0" /><ComboBox fx:id="cmbBD" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" /><Label fx:id="lblNomBD" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Nombre BD" GridPane.rowIndex="1" /><TextField fx:id="txtNomBD" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" /><Label fx:id="lblIP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="IP" GridPane.rowIndex="2" /><TextField fx:id="txtIP" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="2" /><Label fx:id="lblUsuario" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Usuario" GridPane.rowIndex="3" /><TextField fx:id="txtUsuario" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="3" /><Label fx:id="lblPassWord" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Password" GridPane.rowIndex="4" />
+    <PasswordField fx:id="txtPassWord" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    <Label fx:id="lblDominio" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Dominio" GridPane.rowIndex="5" />
+    <TextField fx:id="txtDominio" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+    <Label fx:id="lblInstancia" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Instancia" GridPane.rowIndex="6" />
+    <TextField fx:id="txtInstancia" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+    <Label fx:id="lblRuta" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Ruta" GridPane.rowIndex="7" />
+    <TextField fx:id="txtRuta" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+    <Label fx:id="lblURL" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="URL" GridPane.rowIndex="8" />
+    <TextField fx:id="txtURL" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+    <Label fx:id="lblCODIFICACION" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Codificación" GridPane.rowIndex="9" />
+    <TextField fx:id="txtCODIFICACION" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+    </children>
+  <columnConstraints>
+    <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+    <RowConstraints minHeight="10.0" vgrow="ALWAYS" />
+  </rowConstraints>
+    
+</fx:root>

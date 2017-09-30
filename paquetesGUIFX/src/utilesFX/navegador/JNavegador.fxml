@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<fx:root id="GridPane" prefHeight="26.0" prefWidth="385.0" type="javafx.scene.layout.GridPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Button fx:id="btnPrimero" mnemonicParsing="false" GridPane.rowIndex="2">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Rewind16.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnAnterior" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Back16.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnSiguiente" mnemonicParsing="false" GridPane.columnIndex="3" GridPane.rowIndex="2">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Forward16.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnUltimo" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.rowIndex="2">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/FastForward16.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Separator orientation="VERTICAL" prefHeight="2.0" prefWidth="2.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+      <Button fx:id="btnAceptar" mnemonicParsing="false" GridPane.columnIndex="7" GridPane.rowIndex="2">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/accept.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnCancelar" mnemonicParsing="false" GridPane.columnIndex="8" GridPane.rowIndex="2">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/cancel.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Separator fx:id="jSeparator2" orientation="VERTICAL" prefHeight="2.0" prefWidth="2.0" GridPane.columnIndex="11" GridPane.rowIndex="2" />
+      <Button fx:id="btnNuevo" mnemonicParsing="false" GridPane.columnIndex="12" GridPane.rowIndex="2">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Add16.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnEditar" mnemonicParsing="false" GridPane.columnIndex="13" GridPane.rowIndex="2">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Edit16.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnBorrar" mnemonicParsing="false" GridPane.columnIndex="14" GridPane.rowIndex="2">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Delete16.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnRefrescar" mnemonicParsing="false" GridPane.columnIndex="15" GridPane.rowIndex="2">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Refresh16.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnBuscar" mnemonicParsing="false" GridPane.columnIndex="16" GridPane.rowIndex="2">
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Find16.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</fx:root>

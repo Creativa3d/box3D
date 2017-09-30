@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import utilesFX.formsGenericos.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root id="AnchorPane" prefHeight="400.0" prefWidth="600.0" type="GridPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints hgrow="ALWAYS" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints vgrow="ALWAYS" />
+   </rowConstraints>
+   <children>
+      <SplitPane dividerPositions="0.2" prefHeight="160.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <items>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <TreeView fx:id="jTreeView1" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <JPanelGenerico2 fx:id="jPanelGenerico1" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+         </items>
+      </SplitPane>
+   </children>
+</fx:root>

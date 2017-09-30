@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry combineaccessrules="false" kind="src" path="/paquetesGUIAndroid"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="lib" path="libs/commons-cli-1.1.jar"/>
+	<classpathentry kind="lib" path="libs/commons-codec-1.6.jar"/>
+	<classpathentry kind="lib" path="libs/commons-io-1.2.jar"/>
+	<classpathentry kind="lib" path="libs/itvPocket.jar" sourcepath="/home/d/programas/java/_NetBeansProyect/itv/itvPocket/dist"/>
+	<classpathentry kind="lib" path="libs/paquetes.jar"/>
+	<classpathentry kind="lib" path="libs/rabbitmq-client.jar"/>
+	<classpathentry kind="lib" path="libs/bcpkix-jdk15on-1.48.jar"/>
+	<classpathentry kind="lib" path="libs/bcprov-jdk15on-1.48.jar"/>
+	<classpathentry kind="lib" path="libs/itextpdf-5.5.6.jar"/>
+	<classpathentry kind="lib" path="libs/jakarta-log4j-1.2.6.jar"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

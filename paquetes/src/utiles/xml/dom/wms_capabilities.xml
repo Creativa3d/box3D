@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMT_MS_Capabilities version="1.1.0">
+    <Service>
+        <!--Comentario de prueba-->
+        <Name>OGC:WMS</Name>
+        <Title>Ciclo hidrico Ortofotos</Title>
+        <Abstract>Diputacion de Alicante, departamento ciclo hidrico, ortofotos</Abstract>
+        <KeywordList>
+            <Keyword>intecsa</Keyword>
+            <Keyword>jump</Keyword>
+            <Keyword>alicante</Keyword>
+            <Keyword>hidrico</Keyword>
+        </KeywordList>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://127.0.0.1:8084/jumpServidor/WMSServlet?" xlink:type="simple"/>
+        <ContactInformation>
+            <ContactPersonPrimary>
+                <ContactPerson/>
+                <ContactOrganization/>
+            </ContactPersonPrimary>
+            <ContactPosition/>
+            <ContactAddress>
+                <AddressType>postal</AddressType>
+                <Address/>
+                <City/>
+                <StateOrProvince/>
+                <PostCode/>
+                <Country/>
+            </ContactAddress>
+            <ContactVoiceTelephone/>
+            <ContactFacsimileTelephone/>
+            <ContactElectronicMailAddress/>
+        </ContactInformation>
+        <Fees>none</Fees>
+        <AccessConstraints>none</AccessConstraints>
+    </Service>
+    <Capability>
+        <Request>
+            <GetCapabilities>
+                <Format>application/vnd.ogc.gml</Format>
+                <DCPType>
+                    <HTTP>
+                        <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://127.0.0.1:8084/jumpServidor/WMSServlet?" xlink:type="simple"/>
+                        </Get>
+                    </HTTP>
+                </DCPType>
+            </GetCapabilities>
+            <GetMap>
+                <Format>image/jpeg</Format>
+                <DCPType>
+                    <HTTP>
+                        <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://127.0.0.1:8084/jumpServidor/WMSServlet?" xlink:type="simple"/>
+                        </Get>
+                    </HTTP>
+                </DCPType>
+            </GetMap>
+            <GetFeatureInfo>
+                <Format>application/vnd.ogc.gml</Format>
+                <Format>text/xml</Format>
+                <Format>text/html</Format>
+                <Format>text/plain</Format>
+                <DCPType>
+                    <HTTP>
+                        <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://127.0.0.1:8084/jumpServidor/WMSServlet?" xlink:type="simple"/>
+                        </Get>
+                    </HTTP>
+                </DCPType>
+            </GetFeatureInfo>
+        </Request>
+        <Exception>
+            <Format>application/vnd.ogc.se_xml</Format>
+            <Format>application/vnd.ogc.se_inimage</Format>
+            <Format>application/vnd.ogc.se_blank</Format>
+        </Exception>
+        <Layer queryable="0" opaque="0" noSubsets="0">
+            <Title>Ortofotos Alicante</Title>
+            <SRS>EPSG:23030</SRS>
+            <BoundingBox SRS="EPSG:23030" minx="598626.625" miny="4189083.75" maxx="823993.3125" maxy="4526299"/>
+            <Layer queryable="1">
+                <Name>0</Name>
+                <Title>Ortofotos Alicante</Title>
+                <SRS>EPSG:23030</SRS>
+                <BoundingBox SRS="EPSG:23030" minx="598626.625" miny="4189083.75" maxx="823993.3125" maxy="4526299"/>
+            </Layer>
+        </Layer>
+    </Capability>
+</WMT_MS_Capabilities>

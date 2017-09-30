@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+
+<!--
+    Document   : ficherosMuestra.xml.xml
+    Created on : 14 de febrero de 2009, 11:28
+    Author     : eduardo
+    Description:
+        Purpose of the document follows.
+-->
+
+<root>
+    <archivo href="fichero1.jar" />
+    <archivo href="/prueba/fichero2.jar" />
+</root>

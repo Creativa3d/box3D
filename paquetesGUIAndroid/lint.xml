@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <issue id="ByteOrderMark" severity="warning" />
+    <issue id="EnforceUTF8" severity="warning" />
+    <issue id="ExtraTranslation" severity="warning" />
+    <issue id="MissingTranslation" severity="warning" />
+</lint>

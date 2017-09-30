@@ -1,0 +1,29 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 01-nov-2016, 16:08:00
+    Author     : eduardo
+*/
+
+.table-view .scroll-bar:vertical > .increment-button,
+.table-view .scroll-bar:vertical > .decrement-button {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-background-color:transparent;
+    -fx-border-color:transparent;    
+}
+
+.table-view .scroll-bar:horizontal > .increment-button,
+.table-view .scroll-bar:horizontal > .decrement-button {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-background-color:transparent;
+    -fx-border-color:transparent;    
+}

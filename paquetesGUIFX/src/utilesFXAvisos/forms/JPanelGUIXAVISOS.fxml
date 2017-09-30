@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import org.controlsfx.control.textfield.CustomTextField?>
+<?scenebuilder-classpath-element ../../../../_NetBeansProyect/paquetes/paquetes/dist/paquetes.jar?>
+<?scenebuilder-classpath-element ../../../../_NetBeansProyect/paquetes/paquetesGUIFX/dist/paquetesGUIFX.jar?>
+
+<fx:root id="AnchorPane" hgap="4.0" prefHeight="470.0" prefWidth="610.0" type="javafx.scene.layout.GridPane" vgap="4.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" vgrow="ALWAYS" />
+    </rowConstraints>
+   <children>
+      <GridPane id="AnchorPane" hgap="4.0" prefHeight="400.0" prefWidth="600.0" vgap="4.0">
+         <children>
+            <CheckBox fx:id="jCheckAVISADOSN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-color: #999900;" text="AVISADOSN" textFill="WHITE" GridPane.columnSpan="2147483647" />
+            <Label fx:id="lblFECHACONCRETA" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="FECHACONCRETA" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <CustomTextField fx:id="txtFECHACONCRETA" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="lblTELF" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="TELF" GridPane.rowIndex="3" />
+            <CustomTextField fx:id="txtTELF" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="lblSENDER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="SENDER" GridPane.rowIndex="4" />
+            <CustomTextField fx:id="txtSENDER" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label fx:id="lblEMAIL" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="EMAIL" GridPane.rowIndex="5" />
+            <CustomTextField fx:id="txtEMAIL" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <CheckBox fx:id="jCheckPANTALLASN" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="PantallaSN" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="NEVER" />
+            <RowConstraints minHeight="10.0" vgrow="NEVER" />
+            <RowConstraints minHeight="10.0" vgrow="NEVER" />
+            <RowConstraints minHeight="10.0" vgrow="NEVER" />
+            <RowConstraints minHeight="10.0" vgrow="NEVER" />
+            <RowConstraints minHeight="10.0" vgrow="NEVER" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+         </rowConstraints>
+      </GridPane>
+   </children>
+</fx:root>

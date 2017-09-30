@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import utilesFX.formsGenericos.JPanelGenerico2?>
+<?scenebuilder-classpath-element ../../../../_NetBeansProyect/paquetes/paquetes/dist/paquetes.jar?>
+<?scenebuilder-classpath-element ../../../../_NetBeansProyect/paquetes/paquetesGUIFX/dist/paquetesGUIFX.jar?>
+
+<fx:root id="AnchorPane" hgap="4.0" prefHeight="400.0" prefWidth="600.0" type="javafx.scene.layout.GridPane" vgap="4.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">  <children>
+        <TabPane fx:id="jTabbedPane1" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <tabs>
+                <Tab fx:id="tabNotas" text="Notas">
+               <content>
+                  <JPanelGenerico2 fx:id="jPanelGeneralNotas" />
+               </content>
+                </Tab>
+            <Tab fx:id="tabTareas" text="Tareas" />
+            <Tab fx:id="tabDocumentos" text="Documentos">
+               <content>
+                  <JPanelGenerico2 fx:id="jPanelGeneralDoc" />
+               </content>
+            </Tab>            
+            </tabs>
+        </TabPane>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" vgrow="ALWAYS" />
+    </rowConstraints>
+</fx:root>

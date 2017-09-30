@@ -1,0 +1,406 @@
+/*
+ * JPanelConexiones.java
+ *
+ * Created on 7 de mayo de 2008, 14:19
+ */
+
+package utilesGUIx.configForm;
+
+import utilesGUIx.Rectangulo;
+import ListDatos.JFilaDatosDefecto;
+import ListDatos.JSTabla;
+import java.io.File;
+import java.sql.Connection;
+import java.util.HashMap;
+import java.util.Set;
+import javax.swing.JFileChooser;
+import utiles.JConversiones;
+import utilesGUI.tiposTextos.JTipoTextoEstandar;
+
+import utilesGUIx.formsGenericos.edicion.JPanelGENERALBASE;
+
+public class JPanelConexiones extends JPanelGENERALBASE {
+    private JConexion moConexion;
+    private JT2CONEXIONESModelo moConexionesControlador;
+    
+    /** Creates new form JPanelConexiones */
+    public JPanelConexiones() {
+        initComponents();
+        try{
+            ponerTipoTextos();
+        }catch(Exception e){
+
+        }
+    }
+    
+    public JConexion getConexion(){
+        return moConexion;
+    }
+    public void setDatos(JConexion poConexion, JT2CONEXIONESModelo poConexiones) {
+        moConexion = poConexion;
+        moConexionesControlador = poConexiones;
+    }
+    public void setDatosAPelo(JConexion poConexion) throws Exception{
+        moConexion = poConexion;
+        rellenarPantalla();
+        mostrarDatos();
+    }
+    
+    public void setDatosYLeerConfig(JConexion poConexion) throws Exception{
+        moConexion = poConexion;
+        rellenarPantalla();
+        try {
+            moConexion.leerConfig();
+        } catch (Exception ex) {
+            utilesGUIx.msgbox.JMsgBox.mensajeErrorYLog(this, ex, getClass().getName());
+        }
+        mostrarDatos();
+        
+    }
+
+    public void habilitarSegunEdicion() throws Exception {
+    }
+
+    public void ponerTipoTextos() throws Exception {
+        txtDominio.setTipo(JTipoTextoEstandar.mclTextCadena);
+        txtIP.setTipo(JTipoTextoEstandar.mclTextCadena);
+        txtInstancia.setTipo(JTipoTextoEstandar.mclTextCadena);
+        txtNomBD.setTipo(JTipoTextoEstandar.mclTextCadena);
+//        txtPassWord.setTipo(JTipoTextoEstandar.mclTextCadena);
+        txtRuta.setTipo(JTipoTextoEstandar.mclTextCadena);
+        txtUsuario.setTipo(JTipoTextoEstandar.mclTextCadena);
+        txtURL.setTipo(JTipoTextoEstandar.mclTextCadena);
+        txtCODIFICACION.setTipo(JTipoTextoEstandar.mclTextCadena);
+    }
+
+    public void rellenarPantalla(){
+        cmbBD.borrarTodo();
+        HashMap<String, Integer> loH = JConexion.getListaPantallas();
+        Set<String> loTextos = loH.keySet();
+        for(String ls: loTextos){
+            cmbBD.addLinea(ls, loH.get(ls).toString() + JFilaDatosDefecto.mcsSeparacion1);
+        }
+    }
+    public JSTabla getTabla() {
+        return null;
+    }
+
+    public void mostrarDatos() throws Exception {
+        txtDominio.setValueTabla(moConexion.msPantDominio );
+        txtIP.setValueTabla(moConexion.msPantIP );
+        txtInstancia.setValueTabla(moConexion.msPantInstancia );
+        txtNomBD.setValueTabla(moConexion.msPantNombreBD );
+        txtPassWord.setText(moConexion.msPantPASSWORD );
+        txtRuta.setValueTabla(moConexion.msPantRuta );
+        txtUsuario.setValueTabla(moConexion.msPantUSUARIO );
+        txtURL.setValueTabla(moConexion.msPantURL);
+        txtCODIFICACION.setValueTabla(moConexion.msPANTCODIFICACION);
+        cmbBD.setValueTabla(String.valueOf(moConexion.mlPantTipoConexion) + JFilaDatosDefecto.mcsSeparacion1);
+    }
+
+    public void establecerDatos() throws Exception {
+        moConexion.msPantDominio = txtDominio.getText();
+        moConexion.msPantIP = txtIP.getText();
+        moConexion.msPantInstancia = txtInstancia.getText();
+        moConexion.msPantNombreBD = txtNomBD.getText();
+        moConexion.msPantPASSWORD = txtPassWord.getText();
+        moConexion.msPantRuta = txtRuta.getText();
+        moConexion.msPantUSUARIO = txtUsuario.getText();
+        moConexion.msPantURL = txtURL.getText();
+        moConexion.msPANTCODIFICACION=txtCODIFICACION.getText();
+
+        moConexion.mlPantTipoConexion = Integer.valueOf(cmbBD.getFilaActual().msCampo(0)).intValue();
+    }
+
+
+    public Rectangulo getTanano() {
+        return new Rectangulo(400, 400);
+    }
+
+    public String getTitulo() {
+        return "Conexion";
+    }
+    
+    public void cancelar() throws Exception {
+        moConexion.mbCancelado=true;
+    }
+
+    public void aceptar()  throws Exception {
+        moConexion.mbCancelado=false;
+        moConexion.guardarConfig();
+        if(moConexionesControlador!=null){
+            moConexionesControlador.addConexion(moConexion);
+        }
+    }
+
+    public Connection probar() throws Exception {
+        establecerDatos();
+        moConexion.guardarConfig();
+        return moConexion.probar();
+    }
+    
+    
+    
+    /** This method is called from within the constructor to
+     * initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is
+     * always regenerated by the Form Editor.
+     */
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
+
+        lblBD = new javax.swing.JLabel();
+        cmbBD = new utilesGUIx.JComboBoxCZ();
+        lblNomBD = new javax.swing.JLabel();
+        txtNomBD = new utilesGUIx.JTextFieldCZ();
+        lblIP = new javax.swing.JLabel();
+        txtIP = new utilesGUIx.JTextFieldCZ();
+        lblUsuario = new javax.swing.JLabel();
+        txtUsuario = new utilesGUIx.JTextFieldCZ();
+        lblPassWord = new javax.swing.JLabel();
+        txtPassWord = new javax.swing.JPasswordField();
+        lblDominio = new javax.swing.JLabel();
+        txtDominio = new utilesGUIx.JTextFieldCZ();
+        lblInstancia = new javax.swing.JLabel();
+        txtInstancia = new utilesGUIx.JTextFieldCZ();
+        jPanelRuta = new javax.swing.JPanel();
+        lblRuta = new javax.swing.JLabel();
+        txtRuta = new utilesGUIx.JTextFieldCZ();
+        btnRuta = new utilesGUIx.JButtonCZ();
+        lblURL = new javax.swing.JLabel();
+        txtURL = new utilesGUIx.JTextFieldCZ();
+        lblCODIFICACION = new javax.swing.JLabel();
+        txtCODIFICACION = new utilesGUIx.JTextFieldCZ();
+
+        setLayout(new java.awt.GridBagLayout());
+
+        lblBD.setText("Base de Datos");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 0, 0);
+        add(lblBD, gridBagConstraints);
+
+        cmbBD.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbBD.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbBDItemStateChanged(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 0, 0);
+        add(cmbBD, gridBagConstraints);
+
+        lblNomBD.setText("Nombre BD");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 0, 0);
+        add(lblNomBD, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 0, 0);
+        add(txtNomBD, gridBagConstraints);
+
+        lblIP.setText("IP");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 0, 0);
+        add(lblIP, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 0, 0);
+        add(txtIP, gridBagConstraints);
+
+        lblUsuario.setText("Usuario");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 0, 0);
+        add(lblUsuario, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 0, 0);
+        add(txtUsuario, gridBagConstraints);
+
+        lblPassWord.setText("Password");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 0, 0);
+        add(lblPassWord, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 0, 0);
+        add(txtPassWord, gridBagConstraints);
+
+        lblDominio.setText("Dominio");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 0, 0);
+        add(lblDominio, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 0, 0);
+        add(txtDominio, gridBagConstraints);
+
+        lblInstancia.setText("Instancia");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 0, 0);
+        add(lblInstancia, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 0, 0);
+        add(txtInstancia, gridBagConstraints);
+
+        jPanelRuta.setLayout(new java.awt.GridBagLayout());
+
+        lblRuta.setText("Ruta");
+        lblRuta.setMaximumSize(new java.awt.Dimension(80, 16));
+        lblRuta.setMinimumSize(new java.awt.Dimension(80, 16));
+        lblRuta.setPreferredSize(new java.awt.Dimension(80, 16));
+        lblRuta.setRequestFocusEnabled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 0, 0);
+        jPanelRuta.add(lblRuta, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 0, 0);
+        jPanelRuta.add(txtRuta, gridBagConstraints);
+
+        btnRuta.setText("...");
+        btnRuta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRutaActionPerformed(evt);
+            }
+        });
+        jPanelRuta.add(btnRuta, new java.awt.GridBagConstraints());
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        add(jPanelRuta, gridBagConstraints);
+
+        lblURL.setText("URL");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 0, 0);
+        add(lblURL, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 0, 0);
+        add(txtURL, gridBagConstraints);
+
+        lblCODIFICACION.setText("Codificación");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 0, 0);
+        add(lblCODIFICACION, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 0, 0);
+        add(txtCODIFICACION, gridBagConstraints);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRutaActionPerformed
+        File loFile = null;
+        try{
+            JFileChooser loFileM = new JFileChooser();
+            if(JConversiones.cdbl(cmbBD.getFilaActual().msCampo(0))==JConexion.mclDBASE){
+                loFileM.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+            }
+            if(loFileM.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+                loFile = loFileM.getSelectedFile();
+                txtRuta.setText(loFile.getAbsolutePath());
+            }
+            
+        }catch(Exception e){
+            utilesGUIx.msgbox.JMsgBox.mensajeErrorYLog(this, e, getClass().getName());
+        }
+    }//GEN-LAST:event_btnRutaActionPerformed
+
+    private void cmbBDItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbBDItemStateChanged
+        try{
+            String lsLinea = cmbBD.getFilaActual().msCampo(0);
+            boolean[] labResult = moConexion.getVisibles((int)JConversiones.cdbl(lsLinea));
+            
+            txtDominio.setVisible(labResult[JConexion.mclCampoDominio]);
+            lblDominio.setVisible(labResult[JConexion.mclCampoDominio]);
+            
+            txtIP.setVisible(labResult[JConexion.mclCampoIP]);
+            lblIP.setVisible(labResult[JConexion.mclCampoIP]);
+            
+            txtInstancia.setVisible(labResult[JConexion.mclCampoInstancia]);
+            lblInstancia.setVisible(labResult[JConexion.mclCampoInstancia]);
+            
+            txtNomBD.setVisible(labResult[JConexion.mclCampoNombre]);
+            lblNomBD.setVisible(labResult[JConexion.mclCampoNombre]);
+            
+            txtPassWord.setVisible(labResult[JConexion.mclCampoPassWord]);
+            lblPassWord.setVisible(labResult[JConexion.mclCampoPassWord]);
+            
+            txtUsuario.setVisible(labResult[JConexion.mclCampoUSUARIO]);
+            lblUsuario.setVisible(labResult[JConexion.mclCampoUSUARIO]);
+
+            txtURL.setVisible(labResult[JConexion.mclCampoURL]);
+            lblURL.setVisible(labResult[JConexion.mclCampoURL]);
+
+            txtCODIFICACION.setVisible(labResult[JConexion.mclCampoCODIFICACION]);
+            lblCODIFICACION.setVisible(labResult[JConexion.mclCampoCODIFICACION]);
+            
+            
+            jPanelRuta.setVisible(labResult[JConexion.mclCampoRuta]);
+            
+            
+        }catch(Exception e){
+            utilesGUIx.msgbox.JMsgBox.mensajeErrorYLog(this, e, getClass().getName());
+        }
+    }//GEN-LAST:event_cmbBDItemStateChanged
+    
+    
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private utilesGUIx.JButtonCZ btnRuta;
+    private utilesGUIx.JComboBoxCZ cmbBD;
+    private javax.swing.JPanel jPanelRuta;
+    private javax.swing.JLabel lblBD;
+    private javax.swing.JLabel lblCODIFICACION;
+    private javax.swing.JLabel lblDominio;
+    private javax.swing.JLabel lblIP;
+    private javax.swing.JLabel lblInstancia;
+    private javax.swing.JLabel lblNomBD;
+    private javax.swing.JLabel lblPassWord;
+    private javax.swing.JLabel lblRuta;
+    private javax.swing.JLabel lblURL;
+    private javax.swing.JLabel lblUsuario;
+    private utilesGUIx.JTextFieldCZ txtCODIFICACION;
+    private utilesGUIx.JTextFieldCZ txtDominio;
+    private utilesGUIx.JTextFieldCZ txtIP;
+    private utilesGUIx.JTextFieldCZ txtInstancia;
+    private utilesGUIx.JTextFieldCZ txtNomBD;
+    private javax.swing.JPasswordField txtPassWord;
+    private utilesGUIx.JTextFieldCZ txtRuta;
+    private utilesGUIx.JTextFieldCZ txtURL;
+    private utilesGUIx.JTextFieldCZ txtUsuario;
+    // End of variables declaration//GEN-END:variables
+
+    
+}

@@ -43,4 +43,4 @@ contact us.
 
 - Eduardo: eduardo@creativa3d.com
 - Cristian: cristian.talavera@creativa3d.com
-- Jose Antonio: jose.antonio@creativa3d.com
+- Jose Antonio: jose.llor@creativa3d.com

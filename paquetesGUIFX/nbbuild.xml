@@ -10,6 +10,10 @@
 <project name="paquetesGUIFX" default="default" basedir=".">
     <description>Builds, tests, and runs the project paquetesGUIFX.</description>
     <import file="nbproject/build-impl.xml"/>
+    <target name="-post-jar">
+        <delete file="${dist.dir}/README.TXT"/>
+        <delete dir="${dist.dir}/lib" includeemptydirs="true"/>
+    </target>
     <!--
 
     There exist several targets which are by default empty and which can be 

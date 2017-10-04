@@ -23,12 +23,10 @@ public class AGuardarDatosXML extends AGuardarDatos {
     
     /**Devuelve un objeto guardar/otros en funcion de la entrada XML
      * @param request petion servelt
-     * @param response respueta servelt
-     * @param poServletContext contexto servlet
-     * @param poServer servidor datos
      * @throws Exception Exception 
      * @return vista
      */
+    @Override
     public ISelectEjecutarComprimido getUpdateWeb(HttpServletRequest request, boolean pbEntradaZIP) throws Exception {
         
         //recogemos los datos a actualizar

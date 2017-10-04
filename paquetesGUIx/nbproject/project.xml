@@ -5,7 +5,7 @@
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
             <name>paquetesGUIx</name>
             <source-roots>
-                <root id="src.paquetesGUIx.dir" name="Source Packages"/>
+                <root id="src.src.dir" name="Source Code"/>
             </source-roots>
             <test-roots/>
         </data>

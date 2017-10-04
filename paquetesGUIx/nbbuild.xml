@@ -10,10 +10,9 @@
 <project name="paquetesGUIx" default="default" basedir=".">
     <description>Builds, tests, and runs the project paquetesGUIx.</description>
     <import file="nbproject/build-impl.xml"/>
-    <target name="-pre-jar">
-        <delete>
-            <fileset dir="bin" includes="**/paquetesGUIx.jar"/>
-        </delete>
+    <target name="-post-jar">
+        <delete file="${dist.dir}/README.TXT"/>
+        <delete dir="${dist.dir}/lib" includeemptydirs="true"/>
     </target>
     <!--
 

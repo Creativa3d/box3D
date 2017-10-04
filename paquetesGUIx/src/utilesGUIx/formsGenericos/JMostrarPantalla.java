@@ -102,9 +102,9 @@ public class JMostrarPantalla extends JMostrarPantallaAbstract {
     }
     public void cerrarForm(final Object poComponente) {
         moSwing.cerrarForm(poComponente);
-        if(moFX!=null){
+        /*if(moFX!=null){
             moFX.cerrarForm(poComponente);
-        }
+        }*/
     }
 
     public static void setTitleM(Object poComp, String psTitulo) {

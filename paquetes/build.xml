@@ -11,10 +11,12 @@
     <description>Builds, tests, and runs the project paquetes.</description>
     <import file="nbproject/build-impl.xml"/>
     <target name="-pre-jar">
-        <delete>
-            <fileset dir="bin" includes="**/paquetes.jar"/>
-        </delete>
-    </target>    
+        <delete file="bin/paquetes.jar"/>
+    </target>
+    <target name="-post-jar">
+        <delete file="${dist.dir}/README.TXT"/>
+        <delete dir="${dist.dir}/lib" includeemptydirs="true"/>
+    </target>
     <!--
 
     There exist several targets which are by default empty and which can be 

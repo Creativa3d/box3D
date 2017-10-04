@@ -7,6 +7,8 @@ database query generator, update database struct from Java code, personalized sw
 
 # Installation
 
+> git clone https://github.com/Creativa3d/box3D
+
 All the projects are configured to be directly imported in NetBeans, and the Android package
 in Android-Studio, all the libraries needed are included. If you have some problem, please,
 contact us.
